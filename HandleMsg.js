@@ -16,7 +16,7 @@ const feature = require('./lib/poll');
 const ffmpeg = require('fluent-ffmpeg')
 const util = require('util')
 const quiziz = require('quizizz.js')
-const canvas = require('canvacord')
+/*const canvas = require('canvacord')*/
 const hackq = new quiziz.QuizizzClient();
 const { Readable, Writable } = require('stream')
 const db_group = new FileSync(appRoot+'/lib/data/group.json')
@@ -32,7 +32,7 @@ const errorImgg = 'https://i.ibb.co/jRCpLfn/user.png'
 db.defaults({ group: []}).write()
 var tanggal  = moment.tz('Asia/Jakarta').format('YYYY-MM-DD')
 
-const { 
+const {
     removeBackgroundFromImageBase64
 } = require('remove.bg')
 
@@ -42,9 +42,9 @@ const {
 const {
     insert
 } = require('././database')
-const { 
+const {
     menuId,
-    menupremium, 
+    menupremium,
     menuhiburan,
     nsfwmenu,
     menulama,
@@ -65,10 +65,10 @@ const {
     Jsholat,
     tiktokmenu,
     Lirik,
-    cekResi, 
-    urlShortener, 
-    meme, 
-    translate, 
+    cekResi,
+    urlShortener,
+    meme,
+    translate,
     nekopoi,
     brainly,
     getLocationData,
@@ -84,9 +84,9 @@ const {
     rugaapi
 } = require('./lib')
 
-const { 
-    msgFilter, 
-    color, 
+const {
+    msgFilter,
+    color,
     processTime,
     createcode,
     isUrl
@@ -144,10 +144,10 @@ let antisticker = JSON.parse(fs.readFileSync('./settings/antisticker.json'))
 ///////////////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////SETTING///////////////////////////////////////
-let { 
+let {
     ownerNumber,
     groupLimit,
-    limitCount, 
+    limitCount,
     memberLimit,
     prefix,
     halal,
@@ -260,7 +260,7 @@ module.exports = HandleMsg = async (piyo, message) => {
             imagex : "https://i.ibb.co/ZXPPFKF/Argumentasi-Dimensi.jpg",
             },
             {
-            lahwoi : "Pacar piyo yang ke 4",   
+            lahwoi : "Pacar piyo yang ke 4",
             imagex : "https://i.ibb.co/NpY5ZBR/image.jpg",
             },
             {
@@ -300,7 +300,7 @@ module.exports = HandleMsg = async (piyo, message) => {
 	    'ga jadi pacar zeus',
 	    'jadi jelek'
             ]
-	
+
         const kutuk = [
             'Sapi',
             'Batu',
@@ -344,7 +344,7 @@ module.exports = HandleMsg = async (piyo, message) => {
             'gatau',
             '2030'
             ]
-        
+
         const rate = [
             '100%',
             '95%',
@@ -430,7 +430,7 @@ module.exports = HandleMsg = async (piyo, message) => {
         // IsBanned
         if (isCmd && isBanned && !isGroupMsg) return console.log(color('[BAN]', 'red'), color(time, 'yellow'), color(`${command} [${args.length}]`), 'from', color(pushname))
         if (isCmd && isBanned && isGroupMsg) return console.log(color('[BAN]', 'red'), color(time, 'yellow'), color(`${command} [${args.length}]`), 'from', color(pushname), 'in', color(name || formattedTitle))
-	    
+
 // Serial Number Generator
 function GenerateRandomNumber(min,max){
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -491,8 +491,8 @@ if (chats == 'dare'){
             })
 }
 if (isGroupMsg){
-if (!gg && !hh) { 
-if (chats == 'sudah'){ 
+if (!gg && !hh) {
+if (chats == 'sudah'){
        await piyo.sendText(from, `Terimakasih sudah menggunakan game truth of dare` , id)
        let sudah = cc.indexOf(sender.id);
        cc.splice(sudah,1)
@@ -718,7 +718,7 @@ if (medium.includes(chats))
 }
 if (hard.includes(chats))
 {
-    await piyo.reply(from, `Jawaban Benar, Selamat Anda Mendapatkan 5 Points\nMau Lanjut ? Silahkan Ketik Next` , id) 
+    await piyo.reply(from, `Jawaban Benar, Selamat Anda Mendapatkan 5 Points\nMau Lanjut ? Silahkan Ketik Next` , id)
     point.addCooldown(sender.id)
     point.addLevelingPoint(sender.id, 5 , _point)
     let tebakhard = hard.indexOf(chats);
@@ -768,7 +768,7 @@ if (chats == 'Easy'){
 }
 if (chats == 'Medium'){
     if (!isMtkk) return
-    if (isMtk) return piyo.reply(from, `Kuis Mtk Sedang Berlangsung` , id) 
+    if (isMtk) return piyo.reply(from, `Kuis Mtk Sedang Berlangsung` , id)
     const kuli = mtkmedium[Math.floor(Math.random() * (mtkmedium.length))]
     const kuli2 = mtkmedium[Math.floor(Math.random() * (mtkmedium.length))]
     const mety = ['+','*']
@@ -797,7 +797,7 @@ if (chats == 'Medium'){
 }
 if (chats == 'Hard'){
     if (!isMtkk) return
-    if (isMtk) return piyo.reply(from, `Kuis Mtk Sedang Berlangsung` , id) 
+    if (isMtk) return piyo.reply(from, `Kuis Mtk Sedang Berlangsung` , id)
     const kull = mtkhard[Math.floor(Math.random() * (mtkhard.length))]
     const kull2 = mtkhard[Math.floor(Math.random() * (mtkhard.length))]
     const udin = ['+','*']
@@ -911,7 +911,7 @@ const isAfkOn = getAfk(sender.id)
             uang.push(obj)
             fs.writeFileSync('./settings/uang.json', JSON.stringify(uang))
         }
-        
+
         const addKoinUser = (serial, amount) => {
             let position = false
             Object.keys(uang).forEach((i) => {
@@ -924,7 +924,7 @@ const isAfkOn = getAfk(sender.id)
                 fs.writeFileSync('./settings/uang.json', JSON.stringify(uang))
             }
         }
-        
+
         const checkATMuser = (serial) => {
             let position = false
             Object.keys(uang).forEach((i) => {
@@ -936,7 +936,7 @@ const isAfkOn = getAfk(sender.id)
                 return uang[position].uang
             }
         }
-        
+
         const bayarLimit = (serial, amount) => {
             let position = false
             Object.keys(limit).forEach((i) => {
@@ -949,7 +949,7 @@ const isAfkOn = getAfk(sender.id)
                 fs.writeFileSync('./settings/limit.json', JSON.stringify(limit))
             }
         }
-            
+
         const confirmATM = (serial, amount) => {
             let position = false
             Object.keys(uang).forEach((i) => {
@@ -962,7 +962,7 @@ const isAfkOn = getAfk(sender.id)
                 fs.writeFileSync('./settings/uang.json', JSON.stringify(uang))
             }
         }
-	
+
             if (isRegistered) {
             const checkATM = checkATMuser(serial)
             try {
@@ -980,7 +980,7 @@ function isStickerMsg(id){
     for (let i of stickerspam){
         if(i.id === id){
             if (i.msg >= 5) {
-                found === true 
+                found === true
                 piyo.reply(from, '*「 𝗔𝗡𝗧𝗜 𝗦𝗣𝗔𝗠 𝗦𝗧𝗜𝗖𝗞𝗘𝗥 」*\nKamu telah SPAM STICKER di grup, kamu akan di kick otomatis oleh Piyobot', message.id).then(() => {
                     piyo.removeParticipant(groupId, id)
                 }).then(() => {
@@ -1005,7 +1005,7 @@ function isStickerMsg(id){
             }else{
                 found === true
                 return false;
-            }   
+            }
         }
     }
     if (found === false){
@@ -1013,7 +1013,7 @@ function isStickerMsg(id){
         stickerspam.push(obj);
         fs.writeFileSync('./settings/stickerspam.json',JSON.stringify(stickerspam));
         return false;
-    }  
+    }
 }
 function addStickerCount(id){
     if (isOwnerBot, isAdmin) {return;}
@@ -1064,7 +1064,7 @@ function buffer2Stream(buffer) {
         }
     })
 }
-	     
+
 //////////////
 if (isAutoStikerOn && isMedia && isImage && !isCmd)
     {
@@ -1080,7 +1080,7 @@ if (isAutoStikerOn && isMedia && isImage && !isCmd)
                 })
         }
 // Anti-Porn Lol Human , Diusahakan apikeya beli premium atau vip
-// Thanks to Vide Frelan  / vide fikri 
+// Thanks to Vide Frelan  / vide fikri
 // Kalo mau yang detek sticker juga , chat saya aja
 if (isGroupMsg && isAntiPorn && !isGroupAdmins && isBotGroupAdmins) {
     if (type === 'image') {
@@ -1121,7 +1121,7 @@ if (isGroupMsg && isAntiPorn && !isGroupAdmins && isBotGroupAdmins) {
                         limit.push(obj);
                         fs.writeFileSync('./settings/limit.json',JSON.stringify(limit));
                         return false;
-                    }  
+                    }
                 }
        function limitAdd (id) {
                     if (isOwnerBot) {return;}
@@ -1142,7 +1142,7 @@ if (isGroupMsg && isAntiPorn && !isGroupAdmins && isBotGroupAdmins) {
 	 // PREMIUM + SEWA
 	premium.expiredCheck(_premium)
 	sewa.expiredCheck(_sewa , piyo , message , groupId)
-    if (!gg && !hh) { 
+    if (!gg && !hh) {
         switch (command) {
         // Menu and TnC
 
@@ -1154,14 +1154,14 @@ case 'ping':
 case 'tnc':
             await piyo.sendText(from, menuId.textTnC())
             break
-case 'menuhiburan':        
+case 'menuhiburan':
         await piyo.sendText(from, menuId.textmenuhiburan (pushname))
         break
-case 'nulis': {                   
+case 'nulis': {
         await piyo.sendText(from, menuId.textmenunulis())
                 }
         break
-case 'mentol':       
+case 'mentol':
         await piyo.sendText(from, menuId.textmentol (pushname))
         break
 case 'menulogo':
@@ -1170,10 +1170,10 @@ case 'menulogo':
 case 'menusticker':
         await piyo.sendText(from, menuId.menusticker (pushname))
         break
-case 'menuhiburan':  
+case 'menuhiburan':
         await piyo.sendText(from, menuId.textmenuhiburan (pushname))
         break
-case 'menutobat':      
+case 'menutobat':
         await piyo.sendText(from, menuId.textmenutobat (pushname))
         break
 case 'wibuarea':
@@ -1182,7 +1182,7 @@ case 'wibuarea':
 case 'menupremium':
                 await piyo.sendText(from, menuId.textmenupremium (pushname))
         break
-case 'menupenting':      
+case 'menupenting':
                 await piyo.sendText(from, menuId.textmenupenting (pushname))
         break
 case 'help':
@@ -1197,7 +1197,7 @@ case 'setpictmenu':
         fs.writeFileSync(`./media/pphana.jpg`, set)
         await piyo.reply(from, `Sudah Kak` , id)
         break
-case 'menulama':            
+case 'menulama':
         const updater = updatepiyobot ? 'yes' : 'no'
         await piyo.sendText(from, menuId.textmenulama(pushname, updater))
         .then(() => ((isGroupMsg) && (isGroupAdmins)) ? piyo.sendText(from, `Menu Admin Grup: *${prefix}menuadmin*`) : null)
@@ -1216,7 +1216,7 @@ case 'ownermenu':
 	    if (!isOwnerBot) return piyo.reply(from, 'Fitur ini hanya untuk owner' , id)
             await piyo.sendText(from, menuId.textownermenu())
             break
-case 'menuadmin':            
+case 'menuadmin':
             if (!isGroupMsg) return piyo.reply(from, 'Maaf, perintah ini hanya dapat dipakai didalam grup!', id)
             if (!isGroupAdmins) return piyo.reply(from, 'Gagal, perintah ini hanya dapat digunakan oleh admin grup!', id)
             await piyo.sendText(from, menuId.textAdmin())
@@ -1235,7 +1235,7 @@ case 'bal':
              piyo.reply(from, `Halo ${pushname}, Kamu Memiliki Uang Sejumlah Rp. ${kantong}`, id)
              break
 ///////////////////////////////////////////////////MENU STICKER////////////////////////////////////////////////////
-case 'stickermeme':               
+case 'stickermeme':
             if ((isMedia || isQuotedImage) && args.length >= 2) {
                 const top = arg.split('|')[0]
                 const bottom = arg.split('|')[1]
@@ -1303,7 +1303,7 @@ case 'delstiker':
 
             }
             break
-			
+
 case 'takestick':
                     if (quotedMsg && quotedMsg.type == 'sticker') {
                         if (!q.includes('|')) return await piyo.reply(from, `Untuk mengubah watermark sticker, reply sticker dengan caption ${prefix}takestick package_name | author_name\n\nContoh: ${prefix}takestick piyo | bot`, id)
@@ -1320,9 +1320,9 @@ case 'takestick':
                     } else {
                         await piyo.reply(from, `Reply sticker yang ingin dicolong dengan caption ${prefix}takestick package_name | author_name\n\nContoh: ${prefix}takestick piyo | bot`, id)
                     }
-        break			
+        break
 case 'stimg':
-case 'toimg':                                
+case 'toimg':
             if (quotedMsg && quotedMsg.type == 'sticker') {
                 const mediaData = await decryptMedia(quotedMsg)
                 piyo.reply(from, `Sedamg di proses! Silahkan tunggu sebentar...`, id)
@@ -1393,11 +1393,11 @@ case 'stiker':
                     console.error(err)
                     await piyo.reply(from, ind.videoLimit(), id)
                 }
-            } 
+            }
             break
 case 'stickergif':
-case 'stikergif':             
-                    if (isLimit(serial)) return piyo.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)                   
+case 'stikergif':
+                    if (isLimit(serial)) return piyo.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
                     if (isMedia && type === 'video' || mimetype === 'image/gif') {
                         await piyo.reply(from, ind.wait(), id)
                         try {
@@ -1429,7 +1429,7 @@ case 'stikergif':
                     }
                 break
 case 'stikergiphy':
-case 'stickergiphy':               
+case 'stickergiphy':
                 if (args.length !== 1) return piyo.reply(from, `Maaf, format pesan salah.\nKetik pesan dengan ${prefix}stickergiphy <link_giphy>`, id)
                 const isGiphy = url.match(new RegExp(/https?:\/\/(www\.)?giphy.com/, 'gi'))
                 const isMediaGiphy = url.match(new RegExp(/https?:\/\/media.giphy.com\/media/, 'gi'))
@@ -1479,7 +1479,7 @@ case 'findstiker':
                                     await piyo.reply(from, `Ada yang Error!\nmungkin kata kunci yang anda cari tidak ada`, id)
                            }
                             break
-case 'linesticker':   		
+case 'linesticker':
                             await piyo.reply(from, ind.wait(), id)
                                 rugaapi.linesticker()
                                 .then(async ({ result }) => {
@@ -1491,7 +1491,7 @@ case 'linesticker':
                         })
                         break
 case 'stickerlightning':
-case 'slightning':                
+case 'slightning':
                                 if (isMedia && type === 'image' || isQuotedImage) {
                                     await piyo.reply(from, ind.wait(), id)
                                     const encryptMedia = isQuotedImage ? quotedMsg : message
@@ -1515,7 +1515,7 @@ case 'slightning':
                             break
 case 'stickerfire':
 case 'sfiree':
-                                
+
                                 if (isMedia && type === 'image' || isQuotedImage) {
                                     await piyo.reply(from, ind.wait(), id)
                                     const encryptMedia = isQuotedImage ? quotedMsg : message
@@ -1641,13 +1641,13 @@ case 'csgo':
             if (!q) return piyo.reply(from, `Salahkak , ketik /csgo teksnya` , id)
             const csgo = await axios.get(`https://api.zeks.xyz/api/cslogo?text=${q}&apikey=administrator`)
             piyo.sendFileFromUrl(from, csgo.data.result, 'pubg.jpg', 'jan epep burik tuh', id)
-            break			
-case 'blackpink':            
+            break
+case 'blackpink':
     piyo.reply(from, ind.wait(), id)
     const blpk = body.slice(11)
     if (blpk.length > 10) return piyo.reply(from, '*Teks Terlalu Panjang!*\n_Maksimal 10 huruf!_', id)
     await piyo.sendFileFromUrl(from, `https://api.zeks.xyz/api/logobp?text=${blpk}&apikey=${apizeks}`, 'blackpink.jpg', '', id)
-    break 
+    break
 case 'pornhub':
     if (args.length == 2) return piyo.reply(from, `Kirim perintah */pornhub [ |Teks1|Teks2 ]*, contoh */pornhub |Alvio|Piyobot*`, id)
     argz = body.trim().split('|')
@@ -1792,10 +1792,10 @@ case 'pornhub':
             } else {
                 await piyo.reply(from, `Wrong Format!\n[❗] Kirim perintah */pornhub [ |Teks1|Teks2 ]*, contoh */pornhub |Piyo|Alvio*`, id)
             }
-            break   
-            
+            break
+
 case 'tulispasir':
-case 'sandwriting': 
+case 'sandwriting':
                             if (!isGroupMsg) return piyo.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
                             if (args.length !== 1) return piyo.reply(from, 'Kirim perintah */sandwriting [ Teks ]*\nContoh */sandwriting Piyobot*', id)
                             const swrt = body.slice(13)
@@ -1829,7 +1829,7 @@ case 'heroml':
 
 case 'glitchtext':
             case 'glitext':
-                
+
                 if (!q) return await piyo.reply(from, ind.wrongFormat(), id)
                 const teks1 = q.substring(0, q.indexOf('|') - 1)
                 const teks2 = q.substring(q.lastIndexOf('|') + 2)
@@ -1866,7 +1866,7 @@ case 'phcomment':
                             })
                     break
 
-case 'valentine':     
+case 'valentine':
                         if (!q) return await piyo.reply(from, ind.wrongFormat(), id)
                         if (isMedia && type === 'image' || isQuotedImage) {
                             await piyo.reply(from, ind.wait(), id)
@@ -1907,14 +1907,14 @@ case 'trumptweet':
                 await limitAdd(serial)
                 break
 //////////////////////////////////////////////////MENU GRUP////////////////////////////////////////////////////////
-case 'afk':                             
+case 'afk':
               if (!isGroupMsg) return await piyo.reply(from, ind.groupOnly(), id)
                 if (isAfkOn) return await piyo.reply(from, ind.afkOnAlready(), id)
                 addAfk(sender.id, time, reason)
                 await piyo.reply(from, ind.afkOn(pushname, reason), id)
 break
 
-case 'welcome':              
+case 'welcome':
                 if (!isGroupMsg) return await piyo.reply(from, ind.groupOnly(), id)
                 if (!isGroupAdmins) return await piyo.reply(from, ind.adminOnly(), id)
                 if (ar[0] === 'enable') {
@@ -1991,7 +1991,7 @@ case 'antiporn': //ini antipornnya beli dulu apikenya, cuma support gambar / kal
         piyo.reply(from, `Untuk mengaktifkan antiporn gunakan\n${prefix}antiporn on \n${prefix}antiporn off `, id)
             }
             break
-case 'antilink':                
+case 'antilink':
     if (!isGroupMsg) return await piyo.reply(from, ind.groupOnly(), id)
     if (!isGroupAdmins) return await piyo.reply(from, ind.adminOnly(), id)
     if (!isBotGroupAdmins) return await piyo.reply(from, ind.botNotAdmin(), id)
@@ -2009,7 +2009,7 @@ case 'antilink':
     }
     break
 
-case 'nsfw':               
+case 'nsfw':
         if (!isGroupMsg) return await piyo.reply(from, ind.groupOnly(), id)
         if (!isGroupAdmins) return await piyo.reply(from, ind.adminOnly(), id)
         if (ar[0] === 'enable') {
@@ -2038,7 +2038,7 @@ case 'suit':
             const batu = await fs.readFileSync(`./media/suit/batu.png`, { encoding: "base64" })
             const gunting = await fs.readFileSync(`./media/suit/gunting.png`, { encoding: "base64" })
             const kertas = await fs.readFileSync(`./media/suit/kertas.png`, { encoding: "base64" })
-            
+
             const suitacak = Math.floor(Math.random() * 3)
 
             console.log(suitacak)
@@ -2200,22 +2200,22 @@ try{
             piyo.sendFileFromUrl(from, 'https://i.imgur.com/qkIGnR1.jpg' , 'piyo.jpg' , 'Yah kok udahan sih :(\nNanti Main Kuis Lagi Yak' , id)
             } catch (err) {
             }
-            break 
+            break
 
 case 'sider':
-            if (!isGroupMsg) return piyo.reply(from, `Perintah ini hanya bisa di gunakan dalam group!`, id)                
+            if (!isGroupMsg) return piyo.reply(from, `Perintah ini hanya bisa di gunakan dalam group!`, id)
             if (!quotedMsg) return piyo.reply(from, `Tolong Reply Pesan Bot`, id)
             if (!quotedMsgObj.fromMe) return piyo.reply(from, `Tolong Reply Pesan Bot`, id)
             try {
                 const reader = await piyo.getMessageReaders(quotedMsgObj.id)
                 let list = ''
                 for (let pembaca of reader) {
-                list += `- @${pembaca.id.replace(/@c.us/g, '')}\n` 
+                list += `- @${pembaca.id.replace(/@c.us/g, '')}\n`
             }
              await piyo.sendTextWithMentions(from, `Ngeread doangg.. Nimbrung kagaa\n${list}`)
             } catch(err) {
                 console.log(err)
-                piyo.reply(from, `Maaf, Belum Ada Yang Membaca Pesan Bot atau Mereka Menonaktifkan Read Receipts`, id)    
+                piyo.reply(from, `Maaf, Belum Ada Yang Membaca Pesan Bot atau Mereka Menonaktifkan Read Receipts`, id)
             }
             break
 
@@ -2234,7 +2234,7 @@ case 'dadu':
     const dice = Math.floor(Math.random() * 6) + 1
     await piyo.sendStickerfromUrl(from, 'https://www.random.org/dice/dice' + dice + '.png', { method: 'get' })
     break
-    
+
 case 'slap':
         piyo.reply(from, `sebentar cuk`, id);
         const person = author.replace('@c.us', '')
@@ -2282,7 +2282,7 @@ case 'edotensei':
             await rugaapi.sleep(4000)
             await piyo.addParticipant(from,`${mentionedJidList}`)
             await piyo.sendTextWithMentions(from, `Selamat datang ngab @${mentionedJidList}` , id)
-        } 
+        }
         break
 case 'ganteng':
             if (!isGroupMsg) return piyo.reply(from, 'Maaf, perintah ini hanya dapat dipakai didalam grup!', id)
@@ -2298,7 +2298,7 @@ case 'gay':
             const mmkkkkkk = `YANG PALING GAY DISINI ADALAH @${gmikkkk.replace(/@c.us/g, '')}`
             piyo.sendTextWithMentions(from, mmkkkkkk, id)
             break
-case 'howgay': 
+case 'howgay':
             if (args.length == 0) return piyo.reply(from, `Untuk mengetahui seberapa gay seseorang gunakan ${prefix}howgay namanya\n\nContoh: /howgay burhan`, id)
                 fetch('https://raw.githubusercontent.com/VideFrelan/howgay/main/howgay.txt')
                 .then(res => res.text())
@@ -2307,7 +2307,7 @@ case 'howgay':
                     let splithowgay = body.split('\n')
                     let randomhowgay = splithowgay[Math.floor(Math.random() * splithowgay.length)]
                     piyo.reply(from, `${randomhowgay}\nRate Gay nya : ${rar}` ,id)
-                    
+
                 })
                 .catch(() => {
                     piyo.reply(from, 'Ada yang Error!', id)
@@ -2566,7 +2566,7 @@ case 'mystat':{
         })
     var adm = admins
     if (ct == null) {
-        return await piyo.reply(from, 'Nomor WhatsApp tidak valid [ Tidak terdaftar di WhatsApp ]', id) 
+        return await piyo.reply(from, 'Nomor WhatsApp tidak valid [ Tidak terdaftar di WhatsApp ]', id)
     } else {
     const contact = ct.pushname
     const dp = await piyo.getProfilePicFromServer(userid)
@@ -2574,17 +2574,17 @@ case 'mystat':{
         var pfp = 'https://raw.githubusercontent.com/Gimenz/line-break/master/profil.jpg'
         } else {
         var pfp = dp
-        } 
+        }
     if (contact == undefined) {
-        var nama = '_Dia pemalu, tidak mau menampilkan namanya_' 
+        var nama = '_Dia pemalu, tidak mau menampilkan namanya_'
         } else {
         var nama = contact
-        } 
+        }
     const caption = `*Detail Member* ✨ \n\n● *Name :* ${nama}\n● *Bio :* ${bio.status}\n● *Chat link :* wa.me/${sender.id.replace('@c.us', '')}\n● *Role :* ${adm}\n● *Banned by Bot :* ${ban ? '✔' : '❌'}\n● *Blocked by Bot :* ${isblocked ? '✔' : '❌'}\n● *Chat with bot :* ${isOnline}`
     piyo.sendFileFromUrl(from, pfp, 'dp.jpg', caption)
     }
     }
-break  
+break
 
 case 'buypremium':{
 if (args.length == 0) return piyo.reply(from, `[❗] Kirim perintah */buypremium [teks]*\ncontoh : */buypremium Permisi Owner, Mau beli premium*` , id)
@@ -2600,7 +2600,7 @@ case 'bugreport':{
         piyo.reply(from, 'Masalah telah di laporkan ke owner BOT, laporan palsu/main2 tidak akan ditanggapi.' , id)
     }
     break
-case 'join':                                      
+case 'join':
     if (args.length == 0) return piyo.reply(from, `Jika kalian ingin mengundang bot kegroup silahkan invite atau dengan\nketik ${prefix}join [link group]`, id)
     let linkgrup = body.slice(6)
     let islink = linkgrup.match(/(https:\/\/chat.whatsapp.com)/gi)
@@ -2628,7 +2628,7 @@ case 'join':
     break
 case 'botstat':
         {
-                        
+
                     const loadedMsg = await piyo.getAmountOfLoadedMessages()
                     const chatIds = await piyo.getAllChatIds()
                     const groups = await piyo.getAllGroups()
@@ -2639,7 +2639,7 @@ case 'mutualan':
                     if (isLimit(pengirim)) return piyo.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik /limit Untuk Mengecek Kuota Limit Kamu`, id)
                      await limitAdd(pengirim)
                     if (!chatId) return await piyo.reply(from, 'mutualan tidak bisa dalam grup', id)
-                    await piyo.reply(from, ind.waitmutualan(), id)        
+                    await piyo.reply(from, ind.waitmutualan(), id)
                     const ganteng = nomormutualan[Math.floor(Math.random() * (nomormutualan.length))]
                     await piyo.sendContact(from, ganteng)
                     .then(() => piyo.sendText(from, 'Partner found :🙉\n/next — find a new Partner'))
@@ -2648,7 +2648,7 @@ case 'next':
                      if (isLimit(pengirim)) return piyo.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik /limit Untuk Mengecek Kuota Limit Kamu`, id)
                     await limitAdd(pengirim)
                      if (!isRegistered) return await piyo.reply(from, 'mutualan tidak bisa dalam grup', id)
-                    await piyo.reply(from, ind.waitmutualan(), id)        
+                    await piyo.reply(from, ind.waitmutualan(), id)
                      const cantik = nomormutualan[Math.floor(Math.random() * (nomormutualan.length))]
                      await piyo.sendContact(from, cantik)
                      .then(() => piyo.sendText(from, 'Partner found :🙉\n/next — find a new partner'))
@@ -2680,7 +2680,7 @@ case 'send':
                              await piyo.reply(from, 'Format salah! Untuk membuka daftar perintah kirim /help', id)
                          }
                      }
- 
+
                      break
 case 'addupdate':
                     {
@@ -2700,9 +2700,9 @@ case 'update': {
                                 }
                                 updatee += '╚═〘 *Piyo Bot* 〙'
                                 await piyo.sendText(from, updatee)
-                    }       
+                    }
                     break
-case 'cekzodiak':         
+case 'cekzodiak':
                       if (args.length !== 4) return piyo.reply(from, `Untuk mengecek zodiak, gunakan ${prefix}cekzodiak nama tanggallahir bulanlahir tahunlahir\nContoh: ${prefix}cekzodiak fikri 13 06 2004`, id)
                         const cekzodiak = await rugaapi.cekzodiak(args[0],args[1],args[2])
                         await piyo.reply(from, cekzodiak, id)
@@ -2710,9 +2710,9 @@ case 'cekzodiak':
                             piyo.reply(from, 'Ada yang Error!', id)
                         })
                         break
-                          case 'spamcall':    
+                          case 'spamcall':
                           if (isLimit(serial)) return piyo.reply(from, `_Hai ${pushname} Limit request anda sudah mencapai batas, Akan direset kembali setiap jam 9 dan gunakan seperlunya!_`, id)
-                        if (q.includes('62')) return piyo.reply(from, `Untuk Spamcall silahkan ketik ${prefix}spamcall nomornya, Nomor diawali dengan 8 tidak +62 / 0 , dan jangan gunakan -\n\nContoh /spamcall 89588888888`, id)         
+                        if (q.includes('62')) return piyo.reply(from, `Untuk Spamcall silahkan ketik ${prefix}spamcall nomornya, Nomor diawali dengan 8 tidak +62 / 0 , dan jangan gunakan -\n\nContoh /spamcall 89588888888`, id)
                         if (args.length == 0) return piyo.reply(from, `Untuk Spamcall silahkan ketik ${prefix}spamcall nomornya, Nomor diawali dengan 8 tidak +62 / 0 , dan jangan gunakan -\n\nContoh /spamcall 89588888888`, id)
                         const spamcall = await axios.get(`https://videfikri.com/api/call/?nohp=${q}`)
                         const call = spamcall.data.result
@@ -2737,14 +2737,14 @@ case 'maps':
                      piyo.sendText(ownerNumber, 'Error Maps : '+ err)
                    }
                   break
-case 'quiziz': 
+case 'quiziz':
 	            if(!q) return piyo.reply(from, `Kirim perintah */quiziz idnya* , Contoh : */quiziz 16126165*` , id)
 		    const quiz = await hackq.fetchQuiz(`${q}`)
 		    await piyo.sendText(from, quiz , id)
 break
-	            
-		    
-		    
+
+
+
 ///////////////////////////////////////////Owner Group////////////////////////////////////////////////////////////
 case 'kickall': //mengeluarkan semua member
 if (!isGroupMsg) return piyo.reply(from, 'Maaf, perintah ini hanya dapat dipakai didalam grup!', id)
@@ -2796,7 +2796,7 @@ case 'gayy':
                    await piyo.reply(from, `wrong format , kirim gambar dengan caption /gay`, id)
                }
              break
-case 'totext': 
+case 'totext':
 if (isMedia && type === 'image' || isQuotedImage) {
 	        await piyo.reply(from, ind.wait(), id)
 	        const encryptMedia = isQuotedImage ? quotedMsg : message
@@ -2809,7 +2809,7 @@ if (isMedia && type === 'image' || isQuotedImage) {
                 .catch(err => {
                 console.log(err)
                 })
-                } 
+                }
 else if (type === 'sticker' || isQuotedSticker) {
                    const dataMedia = isQuotedSticker ? quotedMsg : message
 		   const _mimetype = dataMedia.mimetype
@@ -2824,7 +2824,7 @@ else if (type === 'sticker' || isQuotedSticker) {
                    })
                  }
                  break
-			
+
 case 'whatanime':
 if (isMedia && type === 'image' || isQuotedImage) {
                     await piyo.reply(from, ind.wait(), id)
@@ -2842,7 +2842,7 @@ case 'neko18':
 	      await piyo.sendFileFromUrl(from, `https://lolhuman.herokuapp.com/api/random/nsfw/neko?apikey=${lolhuman}` , 'neko.jpg' , 'Nih kak' , id)
               await limitAdd(serial)
                         break
-case 'anime':               
+case 'anime':
             if (args.length == 0) return piyo.reply(from, `Untuk menggunakan ${prefix}anime\nSilahkan ketik: ${prefix}anime [query]\nContoh: ${prefix}anime random\n\nquery yang tersedia:\nrandom, waifu, husbu, neko`, id)
             if (args[0] == 'random' || args[0] == 'waifu' || args[0] == 'husbu' || args[0] == 'neko')
             {
@@ -2890,8 +2890,8 @@ break
             await piyo.sendFileFromUrl(from, asu.cv[0].audio[2] , 'piyo.mp3' , 'nih kak' , id)
         }
 break
-			
-case 'kpop':     
+
+case 'kpop':
         if (args.length == 0) return piyo.reply(from, `Untuk menggunakan ${prefix}kpop\nSilahkan ketik: ${prefix}kpop [query]\nContoh: ${prefix}kpop bts\n\nquery yang tersedia:\nblackpink, exo, bts`, id)
             if (args[0] == 'blackpink' || args[0] == 'exo' || args[0] == 'bts') {
                 fetch('https://raw.githubusercontent.com/ArugaZ/grabbed-results/main/random/kpop/' + args[0] + '.txt')
@@ -2908,7 +2908,7 @@ case 'kpop':
                 piyo.reply(from, `Maaf query tidak tersedia. Silahkan ketik ${prefix}kpop untuk melihat list query`)
             }
             break
-case 'memes':                
+case 'memes':
             const randmeme = await meme.random()
             piyo.sendFileFromUrl(from, randmeme, '', '', id)
             .catch(() => {
@@ -2962,7 +2962,7 @@ case 'rhentai':
        limitAdd(serial)
    });
    break
-case 'dewabatch':       
+case 'dewabatch':
 if (args.length == 0) return piyo.reply(from, `Untuk mencari anime batch, ketik ${prefix}dewabatch judul\n\nContoh: ${prefix}dewabatch naruto`, id)
 rugaapi.dewabatch(args[0])
 .then(async(res) => {
@@ -2970,7 +2970,7 @@ await piyo.sendFileFromUrl(from, `${res.link}`, '', `${res.text}`, id)
 })
 break
 
-case 'images':               
+case 'images':
     if (args.length == 0) return piyo.reply(from, `Untuk mencari gambar di pinterest\nketik: ${prefix}images [search]\ncontoh: ${prefix}images naruto`, id)
     const cariwall = body.slice(8)
     const hasilwall = await images.fdci(cariwall)
@@ -2980,7 +2980,7 @@ case 'images':
     })
     break
 case 'sreddit':
-        
+
     if (args.length == 0) return piyo.reply(from, `Untuk mencari gambar di sub reddit\nketik: ${prefix}sreddit [search]\ncontoh: ${prefix}sreddit naruto`, id)
     const carireddit = body.slice(9)
     const hasilreddit = await images.sreddit(carireddit)
@@ -2989,7 +2989,7 @@ case 'sreddit':
         piyo.reply(from, 'Ada yang Error!', id)
     })
 break
-case 'hilang':                
+case 'hilang':
                 if (!q) return await piyo.reply(from, ind.wrongFormat(), id)
                 const atas = q.substring(0, q.indexOf('|'))
                 const tengah = q.substring(q.indexOf('|') + 2, q.lastIndexOf('|'))
@@ -3012,7 +3012,7 @@ case 'hilang':
                     await piyo.reply(from, ind.wrongFormat(), id)
                 }
             break
-case 'meme':                
+case 'meme':
             if ((isMedia || isQuotedImage) && args.length >= 2) {
                 const top = arg.split('|')[0]
                 const bottom = arg.split('|')[1]
@@ -3031,7 +3031,7 @@ case 'meme':
                 await piyo.reply(from, `Tidak ada gambar! Silahkan kirim gambar dengan caption ${prefix}meme <teks_atas> | <teks_bawah>\ncontoh: ${prefix}meme teks atas | teks bawah`, id)
             }
             break
-case 'quotemaker':               
+case 'quotemaker':
 if (!q) return piyo.reply(from, 'Ketik /quotemaker quotesnya\nExample: /quotemaker piyoganteng' , id)
 			{
                 piyo.reply(from, 'Proses kak..', id)
@@ -3041,7 +3041,7 @@ if (!q) return piyo.reply(from, 'Ketik /quotemaker quotesnya\nExample: /quotemak
                 } catch {
                     piyo.reply('Yahh proses gagal, kakak isinya sudah benar belum?..', id)
                 }
-            } 
+            }
             break
 case 'loli':
                 await piyo.reply(from, ind.wait(), id)
@@ -3076,7 +3076,7 @@ case 'shota':
 case 'blowjob':
                 if (banChat() ) return await piyo.reply(from, `Stay Halal Brother`, id)
                 if (chatId){
-                        
+
                         await piyo.reply(from, ind.wait(), id)
                             rugaapi.blowjob()
                             .then(async ({ url }) => {
@@ -3087,7 +3087,7 @@ case 'blowjob':
                     break
 case 'fetish':
                 if (banChat() ) return await piyo.reply(from, `Stay Halal Brother`, id)
-                if (chatId)  {   
+                if (chatId)  {
                         await piyo.reply(from, ind.wait(), id)
                         try {
                                           if (ar[0] === 'armpits') {
@@ -3211,7 +3211,7 @@ case 'infofetish':
                             piyo.sendText(from, `Info fetish : \n\n1. armpits\n2. feets\n3. thighs\n4. ass\n5. boobs\n6. belly\n7. sideboobs\n8. ahegao`)
                             break
 /////////////////////////////////////////////////////////MENU EDUKASI////////////////////////////////////////////////////////////
-        case 'kbbi':           
+        case 'kbbi':
                 if (!q) return await piyo.reply(from, ind.wrongFormat(), id)
                 await piyo.reply(from, ind.wait(), id)
                 kbbi(q)
@@ -3228,7 +3228,7 @@ case 'infofetish':
                         await piyo.reply(from, 'Error!', id)
                     })
             break
-                case 'nulishd':                
+                case 'nulishd':
                 if (!q) return await piyo.reply(from, `Ketik /nulishd teksnya` , id)
                 await piyo.reply(from, ind.wait() , id)
                 console.log('Creating nulis')
@@ -3236,7 +3236,7 @@ case 'infofetish':
                 break
 case 'nuliskanan': {
                         //if (!isPremium) return piyo.reply(from, 'Maaf, ini adalah fitur premium, untuk menggunakan fitur ini silahkan donasi, Kirim #donasi untuk melihat info donasi', id)
-                        if (!args.length >= 1) return piyo.reply(from, 'Kirim /nuliskanan teks', id) 
+                        if (!args.length >= 1) return piyo.reply(from, 'Kirim /nuliskanan teks', id)
                         const tulisan = body.slice(12)
                         piyo.sendText(from, 'sabar ya lagi nulis')
                         const splitText = tulisan.replace(/(\S+\s*){1,9}/g, '$&\n')
@@ -3262,8 +3262,8 @@ case 'nuliskanan': {
                         })
                     }
                         break
-case 'nuliskiri':                     
-        if (!args.length >= 1) return piyo.reply(from, 'Kirim /nuliskiri teks', id) 
+case 'nuliskiri':
+        if (!args.length >= 1) return piyo.reply(from, 'Kirim /nuliskiri teks', id)
             const tulisan = body.slice(11)
             piyo.sendText(from, 'sabar ya lagi nulis')
             const splitText = tulisan.replace(/(\S+\s*){1,9}/g, '$&\n')
@@ -3290,7 +3290,7 @@ case 'nuliskiri':
         break
                     case 'foliokiri': {
                         //if (!isPremium) return piyo.reply(from, 'Maaf, ini adalah fitur premium, untuk menggunakan fitur ini silahkan donasi, Kirim #donasi untuk melihat info donasi', id)
-                        if (!args.length >= 1) return piyo.reply(from, 'Kirim /foliokiri teks', id) 
+                        if (!args.length >= 1) return piyo.reply(from, 'Kirim /foliokiri teks', id)
                         const tulisan = body.slice(11)
                         piyo.sendText(from, 'sabar ya lagi nulis')
                         const splitText = tulisan.replace(/(\S+\s*){1,13}/g, '$&\n')
@@ -3317,7 +3317,7 @@ case 'nuliskiri':
                     }
                         break
 case 'foliokanan': {
-                        if (!args.length >= 1) return piyo.reply(from, 'Kirim /foliokanan teks', id) 
+                        if (!args.length >= 1) return piyo.reply(from, 'Kirim /foliokanan teks', id)
                         const tulisan = body.slice(12)
                         piyo.sendText(from, 'sabar ya lagi nulis')
                         const splitText = tulisan.replace(/(\S+\s*){1,13}/g, '$&\n')
@@ -3486,7 +3486,7 @@ case 'alaudio':
                       return array.slice(Math.max(array.length - n, 0));
                     };
                     ayat = last(args)
-                  } 
+                  }
                   pesan = ""
                   if(isNaN(ayat)) {
                     var responsih2 = await axios.get('https://raw.githubusercontent.com/ArugaZ/grabbed-results/main/islam/surah/'+nmr+'.json')
@@ -3605,24 +3605,24 @@ case 'tiktoknowm':
                 if (tp.data.status == false) return piyo.reply(from, tp.data.message , id)
 		        await piyo.sendFileFromUrl(from, `http://piyobot.cf/download.png`, 'image.jpg', `Video Ditemukan...\n\nPiyobot\n\n*_Sabar, Piyo lagi ngirim Videonya_*`, id)
                 const respons = await fetch(tp.data.result);
-                const bufferf = await respons.buffer(); 
+                const bufferf = await respons.buffer();
                 await fs.writeFile(`./media/video/tiktok2.mp4`, bufferf)
                 await piyo.sendFile(from,'./media/video/tiktok2.mp4', 'piyo.mp4', 'nih kak',id)
 		        await fs.unlinkSync('./media/video/tiktok2.mp4')
 		break
-			
+
 case 'tiktok':
                 await piyo.reply(from, ind.wait() , id)
                 await piyo.sendFileFromUrl(from, `http://piyobot.cf/download.png`, 'image.jpg', `Video Ditemukan...\n\nPiyobot\n\n*_Sabar, Piyo lagi ngirim Videonya_*`, id)
                 await piyo.sendFileFromUrl(from, `https://lolhuman.herokuapp.com/api/tiktokwm?apikey=${lolhuman}&url=${q}` , 'piyo.mp4',  `*Tiktok Downloader*\n*Creator :* Alvio Adji Januar` , id)
                 break
-			
+
 case 'tiktokmusic':
                 if (!q) return piyo.reply(from, `Silahkan ketik /tiktokmusic link tiktoknya` , id)
                 await piyo.reply(from, ind.wait() , id)
                 await piyo.sendFileFromUrl(from, `https://lolhuman.herokuapp.com/api/tiktokmusic?apikey=${lolhuman}&url=${q}` , 'tiktok.mp3' , '' , id)
                 break
-			
+
 case 'igstory':
                 if (isLimit(serial)) return piyo.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
                 if (!q) return piyo.reply(from, ind.wrongFormat(), id)
@@ -3676,9 +3676,9 @@ case 'play': //PAKE API VIDE FIKRI BIAR ADA SIZE LAGUNYA
             const bufferj = await responno.buffer()
             await fs.writeFile('./media/play.mp3', bufferj)
             await piyo.sendFile(from, './media/play.mp3', 'nih kak', '',  id)
-            await fs.unlinkSync('./media/play.mp3')			
+            await fs.unlinkSync('./media/play.mp3')
             break
-			
+
 case 'playv':
             if (!q) return piyo.reply(from , `Silahkan  ketik /playv judulnya` , id)
             if (!isPremium) return piyo.reply(from, `Maaf, ini adalah fitur premium, untuk menggunakan fitur ini silahkan beli premium ke owner \nUntuk Harga\n\n10k Perbulan\n5k Perpanjang`, id)
@@ -3690,7 +3690,7 @@ case 'playv':
 	    await piyo.sendFileFromUrl(from, thumbnail , 'gambar.jpg', `「 PLAY 」\n\n➸ Judul : ${title}\n➸ Filesize : ${size}\n➸ Link : ${source}\n\n_Video Sedang Dikirim_`,id)
 	    await piyo.sendFileFromUrl(from, url_video , 'piyo.mp4' , 'Nih Kak' , id)
             break
-			
+
 case 'playvn':
 	   if (!q) return piyo.reply(from , `Silahkan  ketik /playvn judulnya` , id)
            await piyo.reply(from, `Wait` , id)
@@ -3703,7 +3703,7 @@ case 'playvn':
            await piyo.sendPtt(from, './media/playvn.mp3' , id)
 	   await fs.unlinkSync('./media/playvn.mp3')
            break
-			
+
 case 'ytmp3':
        await piyo.reply(from, ind.wait() , id)
        try{
@@ -3721,7 +3721,7 @@ case 'ytmp3':
                     piyo.sendText(from, 'Fitur Error : ' + err)
               }
         break
-			
+
 case 'ytmp4':
        await piyo.reply(from, ind.wait() , id)
        try{
@@ -3739,7 +3739,7 @@ case 'ytmp4':
         break
 
 
-			
+
 case 'igstalk':
                         await piyo.reply(from, ind.wait() , id)
                         if (arghh.length === 1)  return piyo.reply(from, 'Kirim perintah /igstalk username\nContoh /igstalk duar_amjay', id)
@@ -3824,14 +3824,14 @@ case 'nickepep':
             const nick1 = await axios.get(`http://hujanapi.xyz/api/nickff?id=${q}&apikey=${apikeyz}`)
             await piyo.reply(from, nick1.data.result , id)
             break
-			
+
 case 'nickml':
             if (!q) return piyo.reply(from, `Ketik /nickml id ff nya ` ,  id)
             await piyo.reply(from, ind.wait() , id)
             const nick = await axios.get(`http://hujanapi.xyz/api/nickml?id=${q}&apikey=${apikeyz}`)
             await piyo.reply(from, nick.data.result , id)
             break
-			
+
 case 'infomotor':
             if (args.length == 0) return piyo.reply(from, `Kirim perintah *${prefix}infomotor [ Merek Motor ]*\n\nContoh : *${prefix}infomotor vario 150*`, id)
         const motoy = body.slice(11)
@@ -3847,7 +3847,7 @@ case 'infomotor':
                     await piyo.reply(from, `Error!`, id)
                 }
             break
-			
+
 case 'xvideos': {
             if (!isPremium) return piyo.reply(from, `Fitur Ini Khusus Premium ` ,id)
             const xtext = message.body.replace('/xvideos', '')
@@ -3881,7 +3881,7 @@ case 'xvideos': {
         }
 break
 
-case 'xnxx': { 
+case 'xnxx': {
     if (!q) return await piyo.sendText(from, `Ketik /xnxx namanya`)
             if (!isPremium) return piyo.reply(from, `Fitur Ini Khusus Premium ` ,id)
             const xtext = message.body.replace('/xnxx', '')
@@ -3915,7 +3915,7 @@ case 'xnxx': {
         }
         break
 
-case 'xnxxdl':{ 
+case 'xnxxdl':{
       if (!isPremium) return piyo.reply(from, `Khusus Premium ` , id )
       const vioo = await axios.get(`http://hujanapi.xyz/api/xnxxdl?url=${q}&apikey=${apikeyz}`)
       await piyo.reply(from, `Mohon tunggu , Video terikirim akan lebih lama jika size besar\nSize Videos : ${vioo.data.size}`  , id)
@@ -3930,7 +3930,7 @@ case 'xvidl':{
       await piyo.sendFileFromUrl(from, vio.data.vid , 'bokep.mp4' , `Title : ${vio.data.judul}\nSize : ${vio.data.size}` ,  id)
 }
 break
-			
+
 case 'indohot':
             if (!isPremium) return piyo.reply(from, `Maaf, ini adalah fitur premium, untuk menggunakan fitur ini silahkan beli premium ke owner \nUntuk Harga\n\n 10kPerbulan\n5kPerpanjang`, id)
             const hot = body.slice(7)
@@ -3939,7 +3939,7 @@ case 'indohot':
             .catch(() => {
                 piyo.reply(from, 'Ada yang Error!', id)
             })
-break 
+break
 
 case 'artimimpi':
                 if (!isGroupMsg) return piyo.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
@@ -3956,7 +3956,7 @@ case 'artimimpi':
                }
                 break
 case 'artinama':
-                
+
 			if (args.length == 0) return piyo.reply(from, `Untuk mengetahui artinama seseorang`, id)
             rugaapi.artinama(body.slice(10))
 			.then(async(res) => {
@@ -3964,7 +3964,7 @@ case 'artinama':
 			})
 			break
 case 'cekjodoh':
-                
+
 			if (args.length !== 2) return piyo.reply(from, `Untuk mengecek jodoh melalui nama\nketik: ${prefix}cekjodoh nama pasangan\n\ncontoh: ${prefix}cekjodoh aku kamu\n\nhanya bisa pakai nama panggilan (satu kata)`)
 			rugaapi.cekjodoh(args[0],args[1])
 			.then(async(res) => {
@@ -3972,7 +3972,7 @@ case 'cekjodoh':
 			})
 			break
 case 'spekhp':
-                
+
                 if (!q) return await piyo.reply(from, ind.wrongFormat(), id)
                 await piyo.reply(from, ind.wait(), id)
                 try {
@@ -4124,7 +4124,7 @@ case 'motivasi':
                 await piyo.reply(from, ind.wait(), id)
                 await piyo.sendFileFromUrl(from, `https://api.vhtear.com/puisi_image&apikey=${vhtearkey}`)
                 break
-        case 'howbucins':         
+        case 'howbucins':
 		if (args.length == 0) return piyo.reply(from, `Untuk mengetahui seberapa bucin seseorang gunakan ${prefix}howbucins namanya\n\nContoh: !howbucins burhan`, id)
             const bucin = await rugaapi.bucin(args[0],args[1],args[2])
             fetch('https://raw.githubusercontent.com/AlvioAdjiJanuar/botakbar/main/howbucins.txt')
@@ -4140,7 +4140,7 @@ case 'motivasi':
             })
             break
 
-        case 'fakta':     
+        case 'fakta':
             fetch('https://raw.githubusercontent.com/ArugaZ/grabbed-results/main/random/faktaunix.txt')
             .then(res => res.text())
             .then(body => {
@@ -4152,19 +4152,19 @@ case 'motivasi':
                 piyo.reply(from, 'Ada yang Error!', id)
             })
             break
-        case 'katabijak':      
+        case 'katabijak':
             fetch('https://raw.githubusercontent.com/ArugaZ/grabbed-results/main/random/katabijax.txt')
             .then(res => res.text())
             .then(body => {
                 let splitbijak = body.split('\n')
                 let randombijak = splitbijak[Math.floor(Math.random() * splitbijak.length)]
-                piyo.reply(from, randombijak, id)		    
+                piyo.reply(from, randombijak, id)
             })
             .catch(() => {
                 piyo.reply(from, 'Ada yang Error!', id)
             })
             break
-        case 'pantun':      
+        case 'pantun':
             fetch('https://raw.githubusercontent.com/ArugaZ/grabbed-results/main/random/pantun.txt')
             .then(res => res.text())
             .then(body => {
@@ -4176,19 +4176,19 @@ case 'motivasi':
                 piyo.reply(from, 'Ada yang Error!', id)
             })
             break
-        case 'quote':       
+        case 'quote':
             const quotex = await rugaapi.quote()
             await piyo.reply(from, quotex, id)
             .catch(() => {
                 piyo.reply(from, 'Ada yang Error!', id)
             })
             break
-			
+
             case 'cersex':
-            await piyo.sendText(from, ind.wait() , id)               
+            await piyo.sendText(from, ind.wait() , id)
             rugaapi.cersex()
 			.then(async ({ result }) => {
-                await piyo.sendText(from, `𝘊𝘦𝘳𝘪𝘵𝘢 𝘕𝘨𝘦𝘯𝘵𝘰𝘵~\nJudul : ${result.judul}\n${result.cerita}` , id) 
+                await piyo.sendText(from, `𝘊𝘦𝘳𝘪𝘵𝘢 𝘕𝘨𝘦𝘯𝘵𝘰𝘵~\nJudul : ${result.judul}\n${result.cerita}` , id)
 			})
             break
             case 'nickepep':
@@ -4198,24 +4198,24 @@ case 'motivasi':
                 await piyo.sendText(from, `${result}` ,id)
             })
             break
-			
+
             case 'nhpdf':
             if (args.length === 0) return piyo.reply(from, `Pake Kodenya mas` , id)
             await piyo.reply(from, ind.wait(), id)
             const nh = await axios.get(`https://lolhuman.herokuapp.com/api/nhentaipdf/${q}?apikey=${lolhuman}`)
             await piyo.sendFileFromUrl(from, nh.data.result , 'piyo.pdf' , '' , id)
             break
-			
+
             case 'listhero':
                 await piyo.sendText(from, ind.wait(), id)
             rugaapi.epep()
             .then(async ({ result }) => {
                 let tode = body.split('\n')
-                await piyo.reply(from, `Nih gan : ${result}` , id) 
+                await piyo.reply(from, `Nih gan : ${result}` , id)
 			})
             break
-          case 'kemem': 
-          case 'memek':               
+          case 'kemem':
+          case 'memek':
             piyo.reply(from, `sedang maintance` ,id)
             break
         case 'xnxxapp':
@@ -4227,11 +4227,11 @@ case 'motivasi':
            .then(() => console.log('Success send apk'))
 break
                 case 'nekopoiapp':
-              if (!isPremium) return piyo.reply(from, `Maaf, ini adalah fitur premium, untuk menggunakan fitur ini silahkan beli premium ke owner Murah kok`, id)          
+              if (!isPremium) return piyo.reply(from, `Maaf, ini adalah fitur premium, untuk menggunakan fitur ini silahkan beli premium ke owner Murah kok`, id)
            await piyo.reply(from, ind.wait(), id)
            await piyo.sendFileFromUrl(from, `https://bit.ly/nekopoiapp`, 'nekopoi.apk', `Nih apk nya mas` ,  id)
            .then(() => console.log('Success send apk'))
-break        
+break
 case 'register':
                 if (isRegistered) return await piyo.reply(from, ind.registeredAlready(), id)
                 if (!q.includes('|')) return await piyo.sendFile(from, './media/register.png' , id)
@@ -4265,7 +4265,7 @@ case 'kapankah':
 
         // Other Command
 case 'lk21':
-                
+
                         if (!q) return await piyo.reply(from, ind.wrongFormat(), id)
                 await piyo.reply(from, ind.wait(), id)
                             rugaapi.movie(q)
@@ -4292,7 +4292,7 @@ case 'cekongkir': //By: VideFrelan
                     piyo.reply(from, onkir, id);
             })
             break
-case 'shopee':               
+case 'shopee':
                 if (!q) return await piyo.reply(from, ind.wrongFormat(), id)
                 const namaBarang = q.substring(0, q.indexOf('|') - 1)
                 const jumlahBarang = q.substring(q.lastIndexOf('|') + 2)
@@ -4325,7 +4325,7 @@ try {
                 }
             break
 case 'playstore':
-            case 'ps':                
+            case 'ps':
                 if (!q) return await piyo.reply(from, ind.wrongFormat(), id)
                 await piyo.reply(from, ind.wait(), id)
                 try {
@@ -4369,8 +4369,8 @@ case 'bass':
                 piyo.reply(from, `Hanya tag data audio!`, id)
             }
             break
-			
-case 'tts':               
+
+case 'tts':
             if (args.length == 0) return piyo.reply(from, `Mengubah teks menjadi sound (google voice)\nketik: ${prefix}tts <kode_bahasa> <teks>\ncontoh : ${prefix}tts id halo\nuntuk kode bahasa cek disini : https://anotepad.com/note/read/5xqahdy8`)
             const ttsGB = require('node-gtts')(args[0])
             const dataText = body.slice(8)
@@ -4382,7 +4382,7 @@ case 'tts':
                 } catch (err) {
                     piyo.reply(from, err, id)
                 }
-            break	
+            break
 case 'tomp3':
         if ((isMedia || isQuotedVideo || isQuotedFile)) {
             piyo.reply(from, ind.wait(), id)
@@ -4428,7 +4428,7 @@ case 'tomp3':
        break
 case 'toptt':
             if (quotedMsg){
-                if (quotedMsg.type === 'audio') { 
+                if (quotedMsg.type === 'audio') {
                     try {
                         await piyo.reply(from, `Tunggu sebentar` , id)
                         mediaData = await decryptMedia(quotedMsg, uaOverride)
@@ -4446,7 +4446,7 @@ case 'toptt':
             }
          break
 case 'translate':
-                
+
             if (args.length != 1) return piyo.reply(from, `Maaf, format pesan salah.\nSilahkan reply sebuah pesan dengan caption ${prefix}translate <kode_bahasa>\ncontoh ${prefix}translate id`, id)
             if (!quotedMsg) return piyo.reply(from, `Maaf, format pesan salah.\nSilahkan reply sebuah pesan dengan caption ${prefix}translate <kode_bahasa>\ncontoh ${prefix}translate id`, id)
             const quoteText = quotedMsg.type == 'chat' ? quotedMsg.body : quotedMsg.type == 'image' ? quotedMsg.caption : ''
@@ -4474,7 +4474,7 @@ case 'ceklokasi':
             const toll = `*CEK LOKASI PENYEBARAN COVID-19*\nHasil pemeriksaan dari lokasi yang anda kirim adalah *${zoneStatus.status}* ${zoneStatus.optional}\n\nInformasi lokasi terdampak disekitar anda:\n${datax}`
             piyo.sendText(from, toll)
             break
-case 'shortlink':        
+case 'shortlink':
             if (args.length == 0) return piyo.reply(from, `ketik ${prefix}shortlink <url>`, id)
             if (!isUrl(args[0])) return piyo.reply(from, 'Maaf, url yang kamu kirim tidak valid.', id)
             const shortlink = await urlShortener(args[0])
@@ -4515,7 +4515,7 @@ case 'hilih':
     await piyo.reply(from, res.kata , id)
     })
     break
-case 'resep':    
+case 'resep':
     if (args.length == 0) return piyo.reply(from, `Untuk mencari resep makanan\nCaranya ketik: ${prefix}resep [search]\n\ncontoh: ${prefix}resep tahu`, id)
     const cariresep = body.slice(7)
     const hasilresep = await resep.resep(cariresep)
@@ -4525,12 +4525,12 @@ case 'resep':
                 })
                 break
 case 'nhdl':
-                    
+
                     if (isGroupMsg) {
                         if (!isNsfw) return await piyo.reply(from, ind.notNsfw(), id)
     }
 case 'nhder':
-        
+
         if (args.length !== 1) return await piyo.reply(from, 'Silakan masukkan kode dengan benar!', id)
         await piyo.reply(from, ind.wait(), id)
         try {
@@ -4543,7 +4543,7 @@ case 'nhder':
               await piyo.reply(from, `Error!\n${err}`, id)
         }
     break
-case 'wiki':          
+case 'wiki':
                 if (args.length == 0) return piyo.reply(from, `Untuk mencari suatu kata dari wikipedia\nketik: ${prefix}wiki [kata]`, id)
                 const wikip = body.slice(6)
                 const wikis = await rugaapi.wiki(wikip)
@@ -4552,7 +4552,7 @@ case 'wiki':
                     piyo.reply(from, 'Ada yang Error!', id)
                 })
                 break
-case 'cuaca':              
+case 'cuaca':
                 if (args.length == 0) return piyo.reply(from, `Untuk melihat cuaca pada suatu daerah\nketik: ${prefix}cuaca [daerah]`, id)
                 const cuacaq = body.slice(7)
                 const cuacap = await rugaapi.cuaca(cuacaq)
@@ -4561,7 +4561,7 @@ case 'cuaca':
                     piyo.reply(from, 'Ada yang Error!', id)
                 })
                 break
-case 'chord':          
+case 'chord':
                 if (args.length == 0) return piyo.reply(from, `Untuk mencari lirik dan chord dari sebuah lagu\bketik: ${prefix}chord [judul_lagu]`, id)
                 const chordq = body.slice(7)
                 const chordd = await axios.get(`https://lolhuman.herokuapp.com/api/chord?apikey=${lolhuman}&query=${q}`)
@@ -4597,7 +4597,7 @@ case 'sspc':
                                     await piyo.sendText(from, bacotanmu)
                                     break
                                         case 'addbacot':{
-                                    if (!args.length >= 1) return piyo.reply(from, 'salah kak, /addbacot teksnya', id)  
+                                    if (!args.length >= 1) return piyo.reply(from, 'salah kak, /addbacot teksnya', id)
                                         const bacot = body.slice(10)
                                         dbcot.push(bacot)
                                         fs.writeFileSync('./settings/bacot.json', JSON.stringify(dbcot))
@@ -4610,8 +4610,8 @@ case 'chat':
             break
             break
 case 'piyo':
-            if (isGroupMsg) 
-            {return await piyo.reply(from, `Fitur ini khusus private chat` ,id)  
+            if (isGroupMsg)
+            {return await piyo.reply(from, `Fitur ini khusus private chat` ,id)
         }else{
             if (args.length !== 1) return piyo.reply(from, `Untuk mengaktifkan piyo pada  Chat\n\nPenggunaan\n${prefix}piyo on --mengaktifkan\n${prefix}piyo off --nonaktifkan\n`, id)
 			if (args[0] == 'on') {
@@ -4627,7 +4627,7 @@ case 'piyo':
 				piyo.reply(from, `Untuk mengaktifkan piyo \n\nPenggunaan\n${prefix}piyo on --mengaktifkan\n${prefix}piyo off --nonaktifkan\n`, id)
             }
         }
-			break    
+			break
 case 'simisimi':
 			if (!isGroupMsg) return piyo.reply(from, 'Maaf, perintah ini hanya dapat dipakai didalam grup!', id)
 			piyo.reply(from, `Untuk mengaktifkan simi-simi pada Group Chat\n\nPenggunaan\n${prefix}simi on --mengaktifkan\n${prefix}simi off --nonaktifkan\n`, id)
@@ -4691,7 +4691,7 @@ case 'listpremium':
                 await piyo.reply(from, listPremi, id)
             break
 case 'resetlimit':
-                if (!isOwnerBot) return piyo.reply(from, `Khusus owner` , id) 
+                if (!isOwnerBot) return piyo.reply(from, `Khusus owner` , id)
 	     {
                 limit.splice(chat.id)
                 fs.writeFileSync('./settings/limit.json', JSON.stringify(limit))
@@ -4713,7 +4713,7 @@ case 'buylimit':
             break
 //////////////////////////////////////////////////////Owner Bot////////////////////////////////////////////////////
 case 'getses':
-            if (!isOwnerBot) return piyo.reply(dari, 'Perintah ini hanya untuk Owner Piyo', id)            
+            if (!isOwnerBot) return piyo.reply(dari, 'Perintah ini hanya untuk Owner Piyo', id)
             const sesPic = await piyo.getSnapshot()
             piyo.sendFile(from, sesPic, 'session.png', 'Nih boss', id)
             break
@@ -4746,7 +4746,7 @@ case 'ev':
                     await piyo.reply(from, 'Error!', id)
                 }
             break
-case 'getcode': { 
+case 'getcode': {
             if (!isOwnerBot) return await piyo.reply(from, ind.ownerOnly(), id)
 	    if (!q) return await piyo.reply(from, `Silahkan ketik /getcode harinya\nContoh: /getcode 15` , id)
             if (ar[0] === '15') {
@@ -4766,8 +4766,8 @@ case 'getcode': {
             await piyo.sendText(ownerNumber, `*「 PREMIUM 30 HARI 」*\n\n➸ *CODE :* ${codeuserr}\n➸ *CARA PAKAI*\n➸ Ketik /premiumcode codenya` , id)
             premiumcode.push(codeuserr)
             fs.writeFileSync('./settings/premiumcode.json', JSON.stringify(premiumcode))
-              } 
-            }  
+              }
+            }
             if (ar[0] === '60'){
             await piyo.reply(from, ind.wait() , id)
             const codeuserrr = createcode(15)
@@ -4783,7 +4783,7 @@ case 'sewa':
                     if (!isOwnerBot) return await piyo.reply(from, ind.ownerOnly(), id)
                     if (ar.length == 0) return piyo.reply(from , `Ketik /sewa add/del harinya\nContoh: /sewa add 30d` , id)
                     if (ar.length == 1) return piyo.reply(from , `Ketik /sewa add/del harinya\nContoh: /sewa add 30d` , id)
-                    if (ar[0] === 'add') 
+                    if (ar[0] === 'add')
                      {
                         sewa.addSewaGroup(chat.id , args[1], _sewa)
                         await piyo.reply(from, ` *「 SEWA ADDED 」*\n\n➸ *ID*: ${chat.id}\n➸ *Expired*: ${ms(toMs(args[1])).days} day(s) ${ms(toMs(args[1])).hours} hour(s) ${ms(toMs(args[1])).minutes} minute(s)\n\nBot Akan Keluar Secara Otomatis\nDalam waktu yang sudah di tentukan`, id)
@@ -4792,14 +4792,14 @@ case 'sewa':
                         await piyo.sendTextWithMentions(from, `@${ownerNumber} Silahkan Baca Pesan Pribadi Saya`)
                         await piyo.sendText(ownerNumber, `Sukses Menyewakan bot kedalam grup ${formattedTitle}\nSalin ID Dibawah Untuk Mendelete Sewaan Di Grup Tersebut\nDengan Ketik /sewa del IDnya` , id)
                         await piyo.sendText(ownerNumber, `${chat.id}`)
-                    } 
+                    }
                     else if (ar[0] === 'del')
                     {
                         _sewa.splice(sewa.getSewaPosition(chat.id, _sewa), 1)
                         fs.writeFileSync('./settings/sewa.json', JSON.stringify(_sewa))
                         await piyo.reply(from, ind.doneOwner(), id)
-                    } 
-                    else 
+                    }
+                    else
                     {
                         _sewa.splice(sewa.getSewaPosition(args[1] , _sewa), 1)
                         fs.writeFileSync('./settings/sewa.json', JSON.stringify(_sewa))
@@ -4846,11 +4846,11 @@ for (let idk of chatz) {
 }
 piyo.reply(from, 'Broadcast Success!', id)
 break
-case 'bcgrup': 
+case 'bcgrup':
             if (!isOwnerBot) return piyo.reply(from, 'Perintah ini hanya untuk Owner bot', id)
             const allGrouppz = await piyo.getAllGroups()
             for (let gclistt of allGrouppz) {
-	    await piyo.sendText(gclistt.contact.id , `${q}`) 
+	    await piyo.sendText(gclistt.contact.id , `${q}`)
             }
             piyo.reply(from, 'Succes Bc all group!', id)
             break
@@ -4907,7 +4907,7 @@ case 'ban':
 case 'autostiker':
             case 'autostik':
             case 'autstik':
-                
+
                 if (!isGroupMsg) return await piyo.reply(from, ind.groupOnly(), id)
                 if (!isGroupAdmins) return await piyo.reply(from, ind.adminOnly(), id)
                 if (ar[0] === 'enable') {
@@ -4937,7 +4937,7 @@ case 'bacot':
                             limitAdd(serial)
                             piyo.sendText(from, kata)
                         }
-                    break  
+                    break
                     case 'slidingtext':
                         if (args.length == 0) return piyo.reply(from, `Membuat Text Sliding\nPemakaian: ${prefix}slidingtext [teks]\n\ncontoh: ${prefix}slidingtext Dimas`, id)
                                         await piyo.reply(from, `Wait....`, id)
